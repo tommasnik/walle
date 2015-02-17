@@ -3,12 +3,9 @@
         <h1>My calendars</h1>
     </div>
     <div class="list-group">
-        <a data-ng-repeat="myCalendar in myCalendars" data-ng-href="#!/my-calendars/{{myCalendar._id}}" class="list-group-item"
-           style="background-color: {{myCalendar.backgroundColor}}; color: {{myCalendar.foregroundColor}}">
+        <a data-ng-repeat="myCalendar in myCalendars" data-ng-href="#!/my-calendars/{{myCalendar.id}}" class="list-group-item"
+           ng-attr-style="background-color: {{myCalendar.backgroundColor}}; color: {{myCalendar.foregroundColor}}">
 			{{myCalendar.summary}}
         </a>
-    </div>
-    <div class="alert alert-warning text-center" data-ng-hide="!myCalendars.$resolved || myCalendars.length">
-    	No My calendars yet, why don't you <a href="/#!/my-calendars/create">create one</a>?
     </div>
 </section>

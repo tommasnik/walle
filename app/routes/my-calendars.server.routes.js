@@ -9,11 +9,14 @@ module.exports = function(app) {
         .get(myCalendars.list);
 //		.post(users.requiresLogin, myCalendars.create);
 
-//	app.route('/my-calendars/:myCalendarId')
-//		.get(myCalendars.read)
+	app.route('/my-calendars/:myCalendarId')
+		.get(myCalendars.read)
 //		.put(users.requiresLogin, myCalendars.hasAuthorization, myCalendars.update)
 //		.delete(users.requiresLogin, myCalendars.hasAuthorization, myCalendars.delete);
 
+    app.route('/my-calendars/:myCalendarId/events')
+        .get(myCalendars.eventsOfCalendar)
+
 	// Finish by binding the My calendar middleware
-//	app.param('myCalendarId', myCalendars.myCalendarByID);
+	app.param('myCalendarId', myCalendars.myCalendarByID);
 };
